@@ -43,11 +43,21 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.tuuzim_flutter2"
-        minSdkVersion flutter.minSdkVersion
+        applicationId "im.tuuz.cc"
+        minSdkVersion 19
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+
+        manifestPlaceholders = [
+                applicationName: "TuuzIM",
+                JPUSH_PKGNAME    : applicationId,
+                JPUSH_APPKEY     : "4e43b1eb7ada7e0b153addc8", // NOTE: JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL    : "developer-default", //暂时填写默认值即可.
+        ]
+
+
     }
 
     buildTypes {
